@@ -1,4 +1,4 @@
-/* ── Contact Section ── */
+/* â”€â”€ Contact Section â”€â”€ */
 
 .section {
   position: relative;
@@ -17,7 +17,7 @@
   height: 600px;
   background: radial-gradient(
     circle,
-    rgba(232, 134, 58, 0.04) 0%,
+    rgba(0, 242, 254, 0.04) 0%,
     transparent 60%
   );
   pointer-events: none;
@@ -29,7 +29,7 @@
   padding: 0 clamp(1.5rem, 4vw, 3rem);
 }
 
-/* ── Heading ── */
+/* â”€â”€ Heading â”€â”€ */
 .heading {
   text-align: center;
   margin-bottom: clamp(3rem, 6vh, 4.5rem);
@@ -41,7 +41,7 @@
   background: linear-gradient(90deg, var(--accent-warm), var(--accent-glow));
   margin: 0 auto 1.25rem;
   border-radius: 1px;
-  box-shadow: 0 0 10px rgba(232, 134, 58, 0.3);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
 }
 
 .tag {
@@ -51,7 +51,10 @@
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--accent-warm);
+  background: linear-gradient(90deg, #ffffff 0%, #00f2fe 50%, #43e97b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1.25rem;
 }
 
@@ -60,7 +63,7 @@
   font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.15;
-  color: var(--text-primary);
+  color: #fff;
   margin-bottom: 1.25rem;
 }
 
@@ -81,7 +84,7 @@
   margin: 0 auto;
 }
 
-/* ── Social Grid ── */
+/* â”€â”€ Social Grid â”€â”€ */
 .socialGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -107,7 +110,7 @@
   background: var(--glass-hover-bg);
   border-color: var(--glass-hover-border);
   transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(232, 134, 58, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 242, 254, 0.08);
 }
 
 .socialIcon {
@@ -124,8 +127,8 @@
 }
 
 .socialCard:hover .socialIcon {
-  background: rgba(232, 134, 58, 0.25);
-  box-shadow: 0 0 20px rgba(232, 134, 58, 0.15);
+  background: rgba(0, 242, 254, 0.25);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
 }
 
 .socialInfo {
@@ -166,7 +169,7 @@
   transform: translate(2px, -2px);
 }
 
-/* ── Footer ── */
+/* â”€â”€ Footer â”€â”€ */
 .footer {
   margin-top: clamp(4rem, 8vh, 6rem);
   text-align: center;
@@ -206,7 +209,7 @@
   opacity: 0.6;
 }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 640px) {
   .socialGrid {
     grid-template-columns: 1fr;
@@ -216,3 +219,5 @@
     padding: 1.5rem;
   }
 }
+
+

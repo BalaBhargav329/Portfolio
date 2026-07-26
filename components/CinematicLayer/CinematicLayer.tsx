@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
@@ -26,7 +26,7 @@ export default function CinematicLayer() {
     const container = containerRef.current;
     if (!container) return;
 
-    // ── Scene Setup ──
+    // â”€â”€ Scene Setup â”€â”€
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       60,
@@ -46,7 +46,7 @@ export default function CinematicLayer() {
     renderer.setClearColor(0x000000, 0);
     container.appendChild(renderer.domElement);
 
-    // ── Circular particle texture ──
+    // â”€â”€ Circular particle texture â”€â”€
     const canvas2d = document.createElement("canvas");
     canvas2d.width = 64;
     canvas2d.height = 64;
@@ -60,7 +60,7 @@ export default function CinematicLayer() {
     ctx.fillRect(0, 0, 64, 64);
     const particleTexture = new THREE.CanvasTexture(canvas2d);
 
-    // ── Particle Configuration ──
+    // â”€â”€ Particle Configuration â”€â”€
     const PARTICLE_COUNT = 120;
     const particles: Particle[] = [];
     const positions = new Float32Array(PARTICLE_COUNT * 3);
@@ -119,7 +119,7 @@ export default function CinematicLayer() {
     geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
     geometry.setAttribute("size", new THREE.BufferAttribute(sizes, 1));
 
-    // ── Custom shader for per-particle size and opacity ──
+    // â”€â”€ Custom shader for per-particle size and opacity â”€â”€
     const vertexShader = `
       attribute float size;
       varying vec3 vColor;
@@ -163,7 +163,7 @@ export default function CinematicLayer() {
     const points = new THREE.Points(geometry, material);
     scene.add(points);
 
-    // ── Mouse parallax ──
+    // â”€â”€ Mouse parallax â”€â”€
     const mouse = { x: 0, y: 0 };
     const smoothMouse = { x: 0, y: 0 };
 
@@ -173,7 +173,7 @@ export default function CinematicLayer() {
     };
     window.addEventListener("mousemove", handleMouseMove);
 
-    // ── Animation Loop ──
+    // â”€â”€ Animation Loop â”€â”€
     let animationId: number;
     const clock = new THREE.Clock();
 
@@ -207,7 +207,7 @@ export default function CinematicLayer() {
     };
     animate();
 
-    // ── Resize Handler ──
+    // â”€â”€ Resize Handler â”€â”€
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
@@ -215,7 +215,7 @@ export default function CinematicLayer() {
     };
     window.addEventListener("resize", handleResize);
 
-    // ── Cleanup ──
+    // â”€â”€ Cleanup â”€â”€
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("mousemove", handleMouseMove);
@@ -232,3 +232,4 @@ export default function CinematicLayer() {
 
   return <div ref={containerRef} className={styles.container} />;
 }
+

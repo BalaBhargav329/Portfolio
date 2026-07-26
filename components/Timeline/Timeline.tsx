@@ -7,30 +7,39 @@ import styles from "./Timeline.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TIMELINE_ITEMS = [
+type TimelineItem = {
+  year: string;
+  title: string;
+  subtitle: string;
+  location?: string;
+  detail: string;
+  type: "education" | "experience";
+};
+
+const TIMELINE_ITEMS: TimelineItem[] = [
   {
-    year: "2022 — 2026",
+    year: "2022 â€” 2026",
     title: "B.Tech in Computer Science & Engineering",
     subtitle: "Kalasalingam Academy of Research and Education",
     location: "Virudhunagar, Tamil Nadu",
     detail: "CGPA: 7.71 / 10",
-    type: "education" as const,
+    type: "education",
   },
   {
-    year: "2020 — 2022",
+    year: "2020 â€” 2022",
     title: "Intermediate (MPC)",
     subtitle: "Narayana Junior College",
     location: "Andhra Pradesh",
     detail: "Percentage: 87%",
-    type: "education" as const,
+    type: "education",
   },
   {
-    year: "2019 — 2020",
+    year: "2019 â€” 2020",
     title: "Secondary School Certificate (SSC)",
     subtitle: "Nakshathra Em High School",
     location: "Andhra Pradesh",
     detail: "Percentage: 87%",
-    type: "education" as const,
+    type: "education",
   },
 ];
 
@@ -104,7 +113,7 @@ export default function Timeline() {
           <div className={styles.decorativeLine} />
           <span className={styles.tag}>Education & Experience</span>
           <h2 className={styles.title}>
-            My <span className={styles.titleAccent}>Journey</span>
+            My <span className="text-gradient">Journey</span>
           </h2>
         </div>
 
@@ -114,9 +123,7 @@ export default function Timeline() {
           {TIMELINE_ITEMS.map((item, index) => (
             <div
               key={item.title}
-              className={`${styles.timelineItem} ${
-                index % 2 === 0 ? styles.itemLeft : styles.itemRight
-              }`}
+              className={styles.timelineItem}
             >
               <div className={styles.timelineDot}>
                 <div className={styles.dotInner} />
@@ -147,3 +154,4 @@ export default function Timeline() {
     </section>
   );
 }
+

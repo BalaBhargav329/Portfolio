@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
@@ -17,7 +17,7 @@ export default function VideoIntro() {
   const [isMuted, setIsMuted] = useState(true);
   const [showSoundHint, setShowSoundHint] = useState(true);
 
-  // ── Entrance Animation ──
+  // â”€â”€ Entrance Animation â”€â”€
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
@@ -49,7 +49,7 @@ export default function VideoIntro() {
     return () => ctx.revert();
   }, []);
 
-  // ── Auto-hide sound hint ──
+  // â”€â”€ Auto-hide sound hint â”€â”€
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSoundHint(false);
@@ -57,14 +57,14 @@ export default function VideoIntro() {
     return () => clearTimeout(timer);
   }, []);
 
-  // ── Hide sound hint when unmuted ──
+  // â”€â”€ Hide sound hint when unmuted â”€â”€
   useEffect(() => {
     if (!isMuted) {
       setShowSoundHint(false);
     }
   }, [isMuted]);
 
-  // ── Auto-Pause when out of view (Stops sound when scrolling away) ──
+  // â”€â”€ Auto-Pause when out of view (Stops sound when scrolling away) â”€â”€
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -92,7 +92,7 @@ export default function VideoIntro() {
     return () => observer.disconnect();
   }, [isPlaying]);
 
-  // ── Play/Pause ──
+  // â”€â”€ Play/Pause â”€â”€
   const togglePlay = useCallback(() => {
     const bgVid = bgVideoRef.current;
     if (!bgVid) return;
@@ -105,7 +105,7 @@ export default function VideoIntro() {
     setIsPlaying(!isPlaying);
   }, [isPlaying]);
 
-  // ── Mute/Unmute ──
+  // â”€â”€ Mute/Unmute â”€â”€
   const toggleMute = useCallback(() => {
     setIsMuted((prev) => {
       const nextMuted = !prev;
@@ -119,7 +119,7 @@ export default function VideoIntro() {
 
   return (
     <section ref={sectionRef} className={styles.hero} id="hero">
-      {/* ── Background Ambient Video ── */}
+      {/* â”€â”€ Background Ambient Video â”€â”€ */}
       <div className={styles.bgVideoWrapper}>
         <video
           ref={bgVideoRef}
@@ -133,17 +133,17 @@ export default function VideoIntro() {
         />
       </div>
 
-      {/* ── Gradient Overlays ── */}
+      {/* â”€â”€ Gradient Overlays â”€â”€ */}
       <div ref={overlayRef} className={styles.gradientOverlay}>
         <div className={styles.gradientLeft} />
         <div className={styles.gradientBottom} />
         <div className={styles.gradientTop} />
       </div>
 
-      {/* ── Content Overlay ── */}
+      {/* â”€â”€ Content Overlay â”€â”€ */}
       <HeroContent />
 
-      {/* ── Sound Hint Badge ── */}
+      {/* â”€â”€ Sound Hint Badge â”€â”€ */}
       <div
         ref={soundHintRef}
         className={`${styles.soundHint} ${
@@ -155,7 +155,7 @@ export default function VideoIntro() {
         <span>Tap for sound</span>
       </div>
 
-      {/* ── Controls ── */}
+      {/* â”€â”€ Controls â”€â”€ */}
       <div ref={controlsRef} className={styles.controls}>
         {/* Play/Pause */}
         <button
@@ -230,8 +230,9 @@ export default function VideoIntro() {
         </button>
       </div>
 
-      {/* ── Scroll Indicator ── */}
+      {/* â”€â”€ Scroll Indicator â”€â”€ */}
       <ScrollIndicator />
     </section>
   );
 }
+

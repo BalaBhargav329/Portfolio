@@ -1,4 +1,4 @@
-/* ── Projects Section ── */
+/* â”€â”€ Projects Section â”€â”€ */
 
 .section {
   position: relative;
@@ -16,7 +16,7 @@
   height: 450px;
   background: radial-gradient(
     circle,
-    rgba(232, 134, 58, 0.03) 0%,
+    rgba(0, 242, 254, 0.03) 0%,
     transparent 70%
   );
   pointer-events: none;
@@ -29,7 +29,7 @@
   padding: 0 clamp(1.5rem, 4vw, 3rem);
 }
 
-/* ── Heading ── */
+/* â”€â”€ Heading â”€â”€ */
 .heading {
   text-align: center;
   margin-bottom: clamp(3rem, 6vh, 5rem);
@@ -41,7 +41,7 @@
   background: linear-gradient(90deg, var(--accent-warm), var(--accent-glow));
   margin: 0 auto 1.25rem;
   border-radius: 1px;
-  box-shadow: 0 0 10px rgba(232, 134, 58, 0.3);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
 }
 
 .tag {
@@ -51,7 +51,10 @@
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--accent-warm);
+  background: linear-gradient(90deg, #ffffff 0%, #00f2fe 50%, #43e97b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1.25rem;
 }
 
@@ -60,7 +63,7 @@
   font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.15;
-  color: var(--text-primary);
+  color: #fff;
 }
 
 .titleAccent {
@@ -70,14 +73,14 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* ── Grid ── */
+/* â”€â”€ Grid â”€â”€ */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.75rem;
 }
 
-/* ── Project Card ── */
+/* â”€â”€ Project Card â”€â”€ */
 .projectCard {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
@@ -93,11 +96,11 @@
   border-color: var(--glass-hover-border);
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(232, 134, 58, 0.1),
-    0 0 40px rgba(232, 134, 58, 0.05);
+    0 0 0 1px rgba(0, 242, 254, 0.1),
+    0 0 40px rgba(0, 242, 254, 0.05);
 }
 
-/* ── Image ── */
+/* â”€â”€ Image â”€â”€ */
 .imageWrapper {
   position: relative;
   width: 100%;
@@ -126,7 +129,7 @@
   pointer-events: none;
 }
 
-/* ── Card Content ── */
+/* â”€â”€ Card Content â”€â”€ */
 .cardContent {
   padding: 1.75rem 1.75rem 2rem;
   display: flex;
@@ -152,7 +155,7 @@
   flex: 1;
 }
 
-/* ── Tags ── */
+/* â”€â”€ Tags â”€â”€ */
 .cardTags {
   display: flex;
   flex-wrap: wrap;
@@ -162,7 +165,7 @@
 .tagPill {
   padding: 0.25rem 0.7rem;
   background: var(--accent-warm-dim);
-  border: 1px solid rgba(232, 134, 58, 0.12);
+  border: 1px solid rgba(0, 242, 254, 0.12);
   border-radius: 100px;
   font-family: var(--font-body);
   font-size: 0.65rem;
@@ -171,7 +174,7 @@
   letter-spacing: 0.03em;
 }
 
-/* ── GitHub Link ── */
+/* â”€â”€ GitHub Link â”€â”€ */
 .cardLink {
   display: inline-flex;
   align-items: center;
@@ -189,7 +192,7 @@
   gap: 0.65rem;
 }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -201,3 +204,5 @@
     grid-template-columns: 1fr;
   }
 }
+
+

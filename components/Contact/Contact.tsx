@@ -103,9 +103,9 @@ export default function Contact() {
       <div className={styles.container}>
         <div ref={headingRef} className={styles.heading}>
           <div className={styles.decorativeLine} />
-          <span className={styles.tag}>Get In Touch</span>
+          <span className={styles.tag}>Let's Connect</span>
           <h2 className={styles.title}>
-            Let&apos;s <span className={styles.titleAccent}>Connect</span>
+            Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className={styles.subtitle}>
             Whether you have an idea for a project or just want to chat, feel free
@@ -149,7 +149,7 @@ export default function Contact() {
           ))}
         </div>
 
-        {/* ── Footer ── */}
+        {/* â”€â”€ Footer â”€â”€ */}
         <footer className={styles.footer}>
           <div className={styles.footerLine} />
           <p className={styles.footerText}>
@@ -157,10 +157,11 @@ export default function Contact() {
             <span className={styles.footerName}>Bala Bhargav</span>
           </p>
           <p className={styles.footerCopy}>
-            © {new Date().getFullYear()} All rights reserved.
+            Â© {new Date().getFullYear()} All rights reserved.
           </p>
         </footer>
       </div>
     </section>
   );
 }
+

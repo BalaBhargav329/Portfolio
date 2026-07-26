@@ -1,4 +1,4 @@
-/* ── Scroll Indicator ── */
+﻿/* â”€â”€ Scroll Indicator â”€â”€ */
 
 .container {
   position: absolute;
@@ -18,14 +18,14 @@
 
 .container:hover .line {
   background: var(--accent-warm);
-  box-shadow: 0 0 12px rgba(232, 134, 58, 0.5);
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.5);
 }
 
 .container:hover .label {
   color: var(--accent-warm);
 }
 
-/* ── Animated Pulse Line ── */
+/* â”€â”€ Animated Pulse Line â”€â”€ */
 .lineWrapper {
   width: 2px;
   height: 50px;
@@ -62,7 +62,7 @@
   }
 }
 
-/* ── Label ── */
+/* â”€â”€ Label â”€â”€ */
 .label {
   font-family: var(--font-body);
   font-size: 0.6rem;
@@ -73,7 +73,7 @@
   transition: color var(--duration-normal) var(--ease-smooth);
 }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 768px) {
   .container {
     bottom: 1.5rem;
@@ -83,3 +83,5 @@
     height: 35px;
   }
 }
+
+

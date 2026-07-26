@@ -1,4 +1,4 @@
-/* ── Timeline Section ── */
+/* â”€â”€ Timeline Section â”€â”€ */
 
 .section {
   position: relative;
@@ -13,7 +13,7 @@
   padding: 0 clamp(1.5rem, 4vw, 3rem);
 }
 
-/* ── Heading ── */
+/* â”€â”€ Heading â”€â”€ */
 .heading {
   text-align: center;
   margin-bottom: clamp(3rem, 6vh, 5rem);
@@ -25,7 +25,7 @@
   background: linear-gradient(90deg, var(--accent-warm), var(--accent-glow));
   margin: 0 auto 1.25rem;
   border-radius: 1px;
-  box-shadow: 0 0 10px rgba(232, 134, 58, 0.3);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
 }
 
 .tag {
@@ -35,7 +35,10 @@
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--accent-warm);
+  background: linear-gradient(90deg, #ffffff 0%, #00f2fe 50%, #43e97b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1.25rem;
 }
 
@@ -44,7 +47,7 @@
   font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.15;
-  color: var(--text-primary);
+  color: #fff;
 }
 
 .titleAccent {
@@ -54,54 +57,45 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* ── Timeline Container ── */
+/* â”€â”€ Timeline Container â”€â”€ */
 .timeline {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  padding-left: clamp(1rem, 2vw, 3rem); /* Added padding so the line has space */
 }
 
-/* ── Central Line ── */
+/* â”€â”€ Left Line (No longer centered) â”€â”€ */
 .timelineLine {
   position: absolute;
-  left: 50%;
+  left: clamp(1rem, 2vw, 3rem); /* Pin the line to the left padding edge */
   top: 0;
   bottom: 0;
-  width: 1px;
+  width: 2px;
   background: linear-gradient(
     180deg,
     var(--accent-warm),
-    rgba(232, 134, 58, 0.2),
+    rgba(0, 242, 254, 0.2),
     transparent
   );
   transform-origin: top center;
-  transform: translateX(-50%);
 }
 
-/* ── Timeline Item ── */
+/* â”€â”€ Timeline Item â”€â”€ */
 .timelineItem {
   position: relative;
-  width: 50%;
-  padding: 0 2.5rem;
-}
-
-.itemLeft {
+  width: 100%; /* Take full width of container */
+  padding-left: clamp(3rem, 5vw, 4rem); /* Space for the line and dot */
+  text-align: left; /* Guaranteed left-aligned text */
   align-self: flex-start;
-  text-align: right;
-  padding-right: 3.5rem;
 }
 
-.itemRight {
-  align-self: flex-end;
-  text-align: left;
-  padding-left: 3.5rem;
-}
-
-/* ── Timeline Dot ── */
+/* â”€â”€ Timeline Dot â”€â”€ */
 .timelineDot {
   position: absolute;
   top: 1.5rem;
+  left: -8px; /* Position dot exactly on the line */
   width: 16px;
   height: 16px;
   background: var(--bg-elevated);
@@ -111,15 +105,7 @@
   align-items: center;
   justify-content: center;
   z-index: 2;
-  box-shadow: 0 0 15px rgba(232, 134, 58, 0.3);
-}
-
-.itemLeft .timelineDot {
-  right: -8px;
-}
-
-.itemRight .timelineDot {
-  left: -8px;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
 }
 
 .dotInner {
@@ -129,7 +115,7 @@
   background: var(--accent-warm);
 }
 
-/* ── Timeline Card ── */
+/* â”€â”€ Timeline Card â”€â”€ */
 .timelineCard {
   padding: 2rem;
   background: var(--glass-bg);
@@ -143,8 +129,8 @@
 .timelineCard:hover {
   background: var(--glass-hover-bg);
   border-color: var(--glass-hover-border);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(232, 134, 58, 0.06);
+  transform: translateX(10px); /* Smooth hover to the right */
+  box-shadow: 0 8px 30px rgba(0, 242, 254, 0.06);
 }
 
 .cardYear {
@@ -153,7 +139,10 @@
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.15em;
-  color: var(--accent-warm);
+  background: linear-gradient(90deg, #00f2fe 0%, #43e97b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 0.4rem;
 }
 
@@ -209,26 +198,17 @@
   color: var(--text-secondary);
 }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 768px) {
+  .timeline {
+    padding-left: 10px;
+  }
   .timelineLine {
-    left: 20px;
+    left: 10px;
   }
-
   .timelineItem {
-    width: 100%;
-    padding-left: 3.5rem !important;
-    padding-right: 0 !important;
-    text-align: left !important;
-  }
-
-  .itemLeft,
-  .itemRight {
-    align-self: stretch;
-  }
-
-  .timelineDot {
-    left: 12px !important;
-    right: auto !important;
+    padding-left: 2.5rem;
   }
 }
+
+

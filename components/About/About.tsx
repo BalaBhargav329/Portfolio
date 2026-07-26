@@ -9,24 +9,47 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
+  const meRef = useRef<HTMLDivElement>(null);
+  const textBlocksRef = useRef<HTMLDivElement>(null);
+
+  const headingText = "ABOUT";
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        cardRef.current,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%",
-          },
-        }
-      );
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 60%", // Triggers when the section is nicely in view
+        },
+      });
+
+      // Heading animation (Words)
+      if (headingRef.current && meRef.current) {
+        tl.fromTo(
+          headingRef.current,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+        );
+
+        tl.fromTo(
+          meRef.current,
+          { x: -30, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+          "-=0.4"
+        );
+      }
+
+      // Text blocks stagger in smoothly
+      if (textBlocksRef.current) {
+        const blocks = textBlocksRef.current.children;
+        tl.fromTo(
+          blocks,
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out" },
+          "-=0.4"
+        );
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -35,42 +58,43 @@ export default function About() {
   return (
     <section ref={sectionRef} className={styles.section} id="about">
       <div className={styles.container}>
-        <div ref={cardRef} className={styles.card}>
-          <div className={styles.headerRow}>
-            <div className={styles.headerTitles}>
-              <span className={styles.subheading}>ABOUT - PROFILE</span>
-              <h2 className={styles.mainTitle}>WHO I AM</h2>
+        
+        <div className={styles.leftColumn}>
+          <h2 className={styles.heading}>
+            <div ref={headingRef} className="text-gradient">
+              ABOUT
             </div>
-            <div className={styles.largeNumber}>01</div>
-          </div>
+            <div ref={meRef} className={`${styles.headingHighlight} text-gradient`}>
+              ME
+            </div>
+          </h2>
+        </div>
 
-          <div className={styles.bodyContent}>
+        <div className={styles.rightColumn} ref={textBlocksRef}>
+          <div className={styles.textBlock}>
+            <h3 className={styles.subheading}>01 // PASSION</h3>
             <p className={styles.paragraph}>
-              Computer Science Engineering student with a{" "}
-              <span className={styles.highlight}>strong foundation</span> in
-              software development and problem-solving. Currently holding a{" "}
-              <span className={styles.highlight}>7.71 CGPA</span> at
-              Kalasalingam Academy. Specialized in bridging the gap between AI
-              research and practical applications, with{" "}
-              <span className={styles.highlight}>3+ projects</span> built
-              including real-time computer vision tools. Highly motivated to
-              quickly learn new technologies and turn complex challenges into{" "}
-              <span className={styles.highlight}>
-                elegant, user-friendly experiences
-              </span>
-              .
+              I am a Full Stack Developer and AI Researcher deeply passionate about bridging artificial intelligence with elegant, practical web applications.
+            </p>
+          </div>
+          
+          <div className={styles.textBlock}>
+            <h3 className={styles.subheading}>02 // ADAPTABILITY</h3>
+            <p className={styles.paragraph}>
+              I thrive in dynamic, fast-paced environments. Whether solving complex backend architectural challenges or fine-tuning frontend performance, I adapt quickly to deliver seamless results.
             </p>
           </div>
 
-          <div className={styles.pillsContainer}>
-            <span className={styles.pill}>FULL STACK</span>
-            <span className={styles.pill}>AI RESEARCH</span>
-            <span className={styles.pill}>PROBLEM SOLVER</span>
-            <span className={styles.pill}>WEB DEVELOPMENT</span>
-            <span className={styles.pill}>SOFTWARE DEV</span>
+          <div className={styles.textBlock}>
+            <h3 className={styles.subheading}>03 // CONTINUOUS LEARNING</h3>
+            <p className={styles.paragraph}>
+              The technology landscape evolves rapidly, and so do I. I am constantly mastering new frameworks, algorithms, and real-time computer vision tools to build the future of digital experiences.
+            </p>
           </div>
         </div>
+
       </div>
     </section>
   );
 }
+

@@ -87,9 +87,9 @@ export default function Projects() {
       <div className={styles.container}>
         <div ref={headingRef} className={styles.heading}>
           <div className={styles.decorativeLine} />
-          <span className={styles.tag}>Featured Work</span>
+          <span className={styles.tag}>Selected Portfolio</span>
           <h2 className={styles.title}>
-            Recent <span className={styles.titleAccent}>Projects</span>
+            Featured <span className="text-gradient">Works</span>
           </h2>
         </div>
 
@@ -156,3 +156,4 @@ export default function Projects() {
     </section>
   );
 }
+

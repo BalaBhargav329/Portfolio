@@ -1,4 +1,4 @@
-/* ── Hero Content Overlay ── */
+﻿/* Ã¢â€â‚¬Ã¢â€â‚¬ Hero Content Overlay Ã¢â€â‚¬Ã¢â€â‚¬ */
 
 .container {
   position: absolute;
@@ -21,7 +21,7 @@
   pointer-events: auto; /* Allow clicking buttons */
 }
 
-/* ── Open to Work Badge ── */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Open to Work Badge Ã¢â€â‚¬Ã¢â€â‚¬ */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -57,7 +57,7 @@
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
 }
 
-/* ── Name ── */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Name Ã¢â€â‚¬Ã¢â€â‚¬ */
 .name {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 5vw, 4.5rem); /* Reduced size for a cleaner look */
@@ -71,54 +71,32 @@
   opacity: 0;
 }
 
-/* ── Subheading ── */
+/* â”€â”€ Subheading â”€â”€ */
 .subheading {
   font-family: var(--font-body);
   font-size: clamp(0.75rem, 1.2vw, 0.9rem);
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--accent-warm);
+  background: linear-gradient(90deg, #ffffff 0%, #00f2fe 40%, #43e97b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 0;
 }
 
-/* ── Skills Pills ── */
-.pillsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  opacity: 0;
-  margin-top: 0.5rem;
-}
-
-.pill {
-  padding: 0.4rem 1.4rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 100px;
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
-}
-
-.pill:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* ── Actions ── */
-.actionsContainer {
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Actions Row (Buttons + Icons) Ã¢â€â‚¬Ã¢â€â‚¬ */
+.actionsRow {
   display: flex;
   align-items: center;
   gap: 2rem;
   margin-top: 1rem;
+}
+
+.actionsContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   opacity: 0;
 }
 
@@ -144,26 +122,53 @@
   border-color: #fff;
 }
 
-.linkSecondary {
-  color: var(--accent-warm);
+.btnSecondary {
+  padding: 0.8rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #fff;
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  text-decoration: none;
   cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Social Icons Ã¢â€â‚¬Ã¢â€â‚¬ */
+.socialIcons {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: opacity 0.3s ease;
+  gap: 1.5rem;
+  opacity: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 2rem;
 }
 
-.linkSecondary:hover {
-  opacity: 0.8;
+.iconLink {
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ── Responsive ── */
+.iconLink:hover {
+  color: var(--accent-warm);
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.3));
+}
+
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Responsive Ã¢â€â‚¬Ã¢â€â‚¬ */
 @media (max-width: 1024px) {
   .content {
     padding-left: clamp(1.5rem, 6vw, 4rem);
@@ -181,9 +186,25 @@
     padding-right: 1.5rem;
     max-width: 100%;
   }
-  .actionsContainer {
+  .actionsRow {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
   }
+  .actionsContainer {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 1rem;
+  }
+  .socialIcons {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 0;
+    padding-top: 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
 }
+
+

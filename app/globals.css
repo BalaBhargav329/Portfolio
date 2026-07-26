@@ -1,19 +1,19 @@
 /* ========================================
-   CINEMATIC PORTFOLIO — GLOBAL STYLES
+   CINEMATIC PORTFOLIO â€” GLOBAL STYLES
    ======================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700;800;900&display=swap');
 
-/* ── Design Tokens ── */
+/* â”€â”€ Design Tokens â”€â”€ */
 :root {
   /* Palette */
   --bg-deep: #0a0a0c;
-  --bg-elevated: #111114;
-  --accent-warm: #e8863a;
-  --accent-glow: #ff9f4a;
-  --accent-warm-dim: rgba(232, 134, 58, 0.15);
-  --monitor-blue: #4a8cc7;
-  --monitor-blue-dim: rgba(74, 140, 199, 0.1);
+  --bg-elevated: #0a0a0c; /* Changed to match --bg-deep for a seamless full-page black background */
+  --accent-warm: #00f2fe;
+  --accent-glow: #43e97b;
+  --accent-warm-dim: rgba(0, 242, 254, 0.15);
+  --monitor-blue: #00f2fe;
+  --monitor-blue-dim: rgba(0, 242, 254, 0.1);
   --text-primary: #f0ece6;
   --text-secondary: rgba(240, 236, 230, 0.55);
   --text-tertiary: rgba(240, 236, 230, 0.3);
@@ -22,7 +22,7 @@
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-hover-bg: rgba(255, 255, 255, 0.1);
-  --glass-hover-border: rgba(232, 134, 58, 0.25);
+  --glass-hover-border: rgba(0, 242, 254, 0.25);
 
   /* Typography */
   --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -45,7 +45,7 @@
   --duration-cinematic: 1.2s;
 }
 
-/* ── Reset ── */
+/* â”€â”€ Reset â”€â”€ */
 *,
 *::before,
 *::after {
@@ -77,16 +77,16 @@ body {
   background: var(--bg-deep);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(232, 134, 58, 0.3);
+  background: rgba(0, 242, 254, 0.3);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(232, 134, 58, 0.5);
+  background: rgba(0, 242, 254, 0.5);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(232, 134, 58, 0.3);
+  background: rgba(0, 242, 254, 0.3);
   color: var(--text-primary);
 }
 
@@ -114,3 +114,22 @@ img, video {
 nextjs-portal {
   display: none !important;
 }
+
+/* ── Premium Global Gradients ── */
+.text-gradient {
+  background: linear-gradient(90deg, #ffffff 0%, #00f2fe 40%, #43e97b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(90deg, #00f2fe 0%, #43e97b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+

@@ -1,4 +1,4 @@
-/* ── Skills Section (Sci-Fi Theme) ── */
+/* â”€â”€ Skills Section (Sci-Fi Theme) â”€â”€ */
 
 .section {
   position: relative;
@@ -19,10 +19,10 @@
 .card {
   position: relative;
   background: rgba(20, 20, 22, 0.7);
-  border: 1px solid rgba(232, 134, 58, 0.3);
+  border: 1px solid rgba(0, 242, 254, 0.3);
   border-radius: 12px;
   padding: clamp(2.5rem, 6vw, 4.5rem);
-  box-shadow: 0 0 30px rgba(232, 134, 58, 0.05), inset 0 0 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.05), inset 0 0 20px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   display: flex;
@@ -39,10 +39,10 @@
   left: 10%;
   right: 10%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(232, 134, 58, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.8), transparent);
 }
 
-/* ── Header Area ── */
+/* â”€â”€ Header Area â”€â”€ */
 .headerRow {
   display: flex;
   justify-content: space-between;
@@ -74,7 +74,6 @@
   color: #ffffff;
   line-height: 1;
   text-transform: uppercase;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 35px rgba(232, 134, 58, 0.7);
   letter-spacing: 0.05em;
 }
 
@@ -84,12 +83,12 @@
   font-weight: 700;
   line-height: 0.8;
   color: transparent;
-  -webkit-text-stroke: 2px rgba(232, 134, 58, 0.6);
+  -webkit-text-stroke: 2px rgba(0, 242, 254, 0.6);
   opacity: 0.9;
   margin-top: -10px;
 }
 
-/* ── Skills Categories ── */
+/* â”€â”€ Skills Categories â”€â”€ */
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -112,7 +111,7 @@
   text-transform: uppercase;
 }
 
-/* ── Pills ── */
+/* â”€â”€ Pills â”€â”€ */
 .pillsContainer {
   display: flex;
   flex-wrap: wrap;
@@ -136,8 +135,8 @@
 .pill:hover {
   border-color: var(--accent-warm);
   color: var(--accent-warm);
-  background: rgba(232, 134, 58, 0.1);
-  box-shadow: 0 0 10px rgba(232, 134, 58, 0.2);
+  background: rgba(0, 242, 254, 0.1);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
 }
 
 @media (max-width: 768px) {
@@ -154,3 +153,5 @@
     z-index: -1;
   }
 }
+
+

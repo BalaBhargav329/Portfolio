@@ -1,4 +1,4 @@
-/* ── Navbar ── */
+﻿/* â”€â”€ Navbar â”€â”€ */
 
 .navbar {
   position: fixed;
@@ -28,7 +28,7 @@
   justify-content: space-between;
 }
 
-/* ── Logo ── */
+/* â”€â”€ Logo â”€â”€ */
 .logo {
   font-family: var(--font-heading);
   font-size: 1.4rem;
@@ -46,7 +46,7 @@
   color: var(--accent-warm);
 }
 
-/* ── Desktop Links ── */
+/* â”€â”€ Desktop Links â”€â”€ */
 .links {
   display: flex;
   list-style: none;
@@ -91,7 +91,7 @@
   width: 100%;
 }
 
-/* ── Hamburger ── */
+/* â”€â”€ Hamburger â”€â”€ */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -122,7 +122,7 @@
   transform: rotate(-45deg) translate(4px, -5px);
 }
 
-/* ── Mobile Menu ── */
+/* â”€â”€ Mobile Menu â”€â”€ */
 .mobileMenu {
   position: fixed;
   top: 0;
@@ -168,7 +168,7 @@
   color: var(--accent-warm);
 }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 768px) {
   .links {
     display: none;
@@ -178,3 +178,5 @@
     display: flex;
   }
 }
+
+

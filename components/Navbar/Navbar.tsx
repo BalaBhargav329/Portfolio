@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
@@ -18,7 +18,7 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // ── Scroll handler ──
+  // â”€â”€ Scroll handler â”€â”€
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 80);
@@ -41,7 +41,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ── Entrance animation ──
+  // â”€â”€ Entrance animation â”€â”€
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -138,3 +138,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
