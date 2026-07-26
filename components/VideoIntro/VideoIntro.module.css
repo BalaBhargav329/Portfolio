@@ -1,0 +1,222 @@
+/* ========================================
+   VIDEO INTRO — CINEMATIC HERO SECTION
+   ======================================== */
+
+/* ── Hero Container ── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-deep); /* the black theme */
+}
+
+/* ── Background Ambient Video ── */
+.bgVideoWrapper {
+  position: absolute;
+  top: 5%;
+  right: -5%; /* Push the container slightly off-screen to the right to hide the right fade */
+  width: 60%; /* Occupy right half */
+  height: 95%;
+  z-index: 1;
+  overflow: hidden;
+  /* 50% radius means it perfectly fits inside the box. transparent 95% GUARANTEES the edges are invisible before they hit the boundary. */
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, black 50%, transparent 95%);
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, black 50%, transparent 95%);
+}
+
+.bgVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* Center him nicely inside the masked oval */
+}
+
+/* ── Gradient Overlays (Blending everything into black) ── */
+.gradientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Make the left side completely black for text readability */
+.gradientLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 12, 1) 0%,
+    rgba(10, 10, 12, 1) 35%,
+    rgba(10, 10, 12, 0) 60%
+  );
+}
+
+/* Fade bottom to black to transition to next section seamlessly */
+.gradientBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: linear-gradient(
+    0deg,
+    rgba(10, 10, 12, 1) 0%,
+    transparent 100%
+  );
+}
+
+/* Subtle top gradient */
+.gradientTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 12, 0.9) 0%,
+    transparent 100%
+  );
+}
+
+/* ── Sound Hint Badge ── */
+.soundHint {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.6s var(--ease-smooth);
+  pointer-events: all;
+}
+
+.soundHintVisible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.soundHintHidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-10px);
+  pointer-events: none;
+}
+
+.soundHint:hover {
+  background: var(--glass-hover-bg);
+  border-color: var(--glass-hover-border);
+  color: var(--text-primary);
+}
+
+.soundHintDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(232, 134, 58, 0.5);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 0 6px rgba(232, 134, 58, 0);
+  }
+}
+
+/* ── Controls ── */
+.controls {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 8;
+  display: flex;
+  gap: 0.75rem;
+  opacity: 0;
+}
+
+.controlBtn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  transition: all var(--duration-normal) var(--ease-smooth);
+  pointer-events: all;
+}
+
+.controlBtn:hover {
+  background: var(--glass-hover-bg);
+  border-color: var(--glass-hover-border);
+  color: var(--text-primary);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(232, 134, 58, 0.15);
+}
+
+.controlBtn:active {
+  transform: scale(0.95);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .bgVideoWrapper {
+    width: 100%;
+    height: 60%;
+    top: 0;
+    -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 30%, black 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 90% 90% at 50% 30%, black 40%, transparent 100%);
+  }
+  .controls {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    gap: 0.5rem;
+  }
+  .controlBtn {
+    width: 38px;
+    height: 38px;
+  }
+  .soundHint {
+    top: 1.5rem;
+    font-size: 0.65rem;
+    padding: 0.4rem 1rem;
+  }
+  .gradientLeft {
+    background: linear-gradient(
+      90deg,
+      rgba(10, 10, 12, 1) 0%,
+      rgba(10, 10, 12, 0.8) 50%,
+      transparent 100%
+    );
+  }
+}

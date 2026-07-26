@@ -1,0 +1,234 @@
+/* ── Timeline Section ── */
+
+.section {
+  position: relative;
+  padding: clamp(5rem, 12vh, 10rem) 0;
+  background-color: var(--bg-elevated);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+}
+
+/* ── Heading ── */
+.heading {
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vh, 5rem);
+}
+
+.decorativeLine {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-warm), var(--accent-glow));
+  margin: 0 auto 1.25rem;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(232, 134, 58, 0.3);
+}
+
+.tag {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+.titleAccent {
+  background: linear-gradient(135deg, var(--accent-warm) 0%, var(--accent-glow) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Timeline Container ── */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ── Central Line ── */
+.timelineLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    var(--accent-warm),
+    rgba(232, 134, 58, 0.2),
+    transparent
+  );
+  transform-origin: top center;
+  transform: translateX(-50%);
+}
+
+/* ── Timeline Item ── */
+.timelineItem {
+  position: relative;
+  width: 50%;
+  padding: 0 2.5rem;
+}
+
+.itemLeft {
+  align-self: flex-start;
+  text-align: right;
+  padding-right: 3.5rem;
+}
+
+.itemRight {
+  align-self: flex-end;
+  text-align: left;
+  padding-left: 3.5rem;
+}
+
+/* ── Timeline Dot ── */
+.timelineDot {
+  position: absolute;
+  top: 1.5rem;
+  width: 16px;
+  height: 16px;
+  background: var(--bg-elevated);
+  border: 2px solid var(--accent-warm);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(232, 134, 58, 0.3);
+}
+
+.itemLeft .timelineDot {
+  right: -8px;
+}
+
+.itemRight .timelineDot {
+  left: -8px;
+}
+
+.dotInner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+}
+
+/* ── Timeline Card ── */
+.timelineCard {
+  padding: 2rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.timelineCard:hover {
+  background: var(--glass-hover-bg);
+  border-color: var(--glass-hover-border);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(232, 134, 58, 0.06);
+}
+
+.cardYear {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--accent-warm);
+  margin-bottom: 0.4rem;
+}
+
+.cardType {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  background: var(--accent-warm-dim);
+  color: var(--accent-warm);
+  margin-bottom: 0.75rem;
+}
+
+.cardTypeExperience {
+  background: var(--monitor-blue-dim);
+  color: var(--monitor-blue);
+}
+
+.cardTitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.cardSubtitle {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 0.2rem;
+}
+
+.cardLocation {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--text-tertiary);
+  margin-bottom: 0.5rem;
+}
+
+.cardDetail {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .timelineLine {
+    left: 20px;
+  }
+
+  .timelineItem {
+    width: 100%;
+    padding-left: 3.5rem !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+  }
+
+  .itemLeft,
+  .itemRight {
+    align-self: stretch;
+  }
+
+  .timelineDot {
+    left: 12px !important;
+    right: auto !important;
+  }
+}
