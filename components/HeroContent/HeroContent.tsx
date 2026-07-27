@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -96,7 +96,7 @@ export default function HeroContent() {
             <a href="#projects">
               <button className={styles.btnPrimary}>EXPLORE WORKS</button>
             </a>
-            <a href="/Bala_Bhargav_CV.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="#resume">
               <button className={styles.btnSecondary}>DOWNLOAD CV</button>
             </a>
           </div>
