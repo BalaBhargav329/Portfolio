@@ -12,7 +12,7 @@ export default function Resume() {
   const labelRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -53,16 +53,7 @@ export default function Resume() {
         );
       }
 
-      // Stats bar stagger
-      if (statsRef.current) {
-        const stats = statsRef.current.children;
-        tl.fromTo(
-          stats,
-          { y: 25, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power3.out" },
-          "-=0.4"
-        );
-      }
+
     }, sectionRef);
 
     return () => ctx.revert();
@@ -126,8 +117,7 @@ export default function Resume() {
                 <div className={styles.pulseRing} />
                 <a
                   href="/Bala_Bhargav_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  download="Bala_Bhargav_Resume.pdf"
                   className={styles.downloadBtn}
                   id="resume-download-cv"
                 >
@@ -174,44 +164,16 @@ export default function Resume() {
               <div className={styles.previewGlowOrb} />
               <iframe
                 className={styles.pdfEmbed}
-                src="/Bala_Bhargav_Resume.pdf"
+                src="/Bala_Bhargav_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=Fit"
                 title="Resume Preview"
               />
               <div className={styles.previewFade} />
 
-              {/* File badge */}
-              <div className={styles.fileBadge}>
-                <span className={styles.fileBadgeIcon}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6z"/>
-                  </svg>
-                </span>
-                <span className={styles.fileBadgeName}>Bala_Bhargav_Resume.pdf</span>
-                <span className={styles.fileBadgeSize}>• 272 KB</span>
-              </div>
+
             </div>
           </div>
         </div>
 
-        {/* Stats Bar */}
-        <div className={styles.statsBar} ref={statsRef}>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>2+</span>
-            <span className={styles.statLabel}>Years Experience</span>
-          </div>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>10+</span>
-            <span className={styles.statLabel}>Projects Delivered</span>
-          </div>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>5+</span>
-            <span className={styles.statLabel}>Tech Stacks</span>
-          </div>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>∞</span>
-            <span className={styles.statLabel}>Passion</span>
-          </div>
-        </div>
       </div>
     </section>
   );

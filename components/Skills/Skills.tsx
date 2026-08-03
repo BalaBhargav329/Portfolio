@@ -94,10 +94,10 @@ export default function Skills() {
         <div ref={cardRef} className={styles.card}>
           <div ref={headerRef} className={styles.headerRow}>
             <div className={styles.headerTitles}>
-              <span className={styles.subheading}>04 // EXPERTISE</span>
+              <span className={styles.subheading}>EXPERTISE</span>
               <h2 className={styles.mainTitle}>Technical <span className="text-gradient">Arsenal</span></h2>
             </div>
-            <div className={styles.largeNumber}>02</div>
+
           </div>
 
           <div ref={gridRef} className={styles.skillsGrid}>

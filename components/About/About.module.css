@@ -88,14 +88,24 @@
   .container {
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 3rem;
   }
   .leftColumn {
     position: relative;
     top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .heading {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.4em;
     line-height: 1;
+  }
+  .headingHighlight {
+    padding-left: 0;
   }
   .rightColumn {
     gap: 2.5rem;

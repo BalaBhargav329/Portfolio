@@ -72,21 +72,21 @@ export default function About() {
 
         <div className={styles.rightColumn} ref={textBlocksRef}>
           <div className={styles.textBlock}>
-            <h3 className={styles.subheading}>01 // PASSION</h3>
+            <h3 className={styles.subheading}>PASSION</h3>
             <p className={styles.paragraph}>
               I am a Full Stack Developer and AI Researcher deeply passionate about bridging artificial intelligence with elegant, practical web applications.
             </p>
           </div>
           
           <div className={styles.textBlock}>
-            <h3 className={styles.subheading}>02 // ADAPTABILITY</h3>
+            <h3 className={styles.subheading}>ADAPTABILITY</h3>
             <p className={styles.paragraph}>
               I thrive in dynamic, fast-paced environments. Whether solving complex backend architectural challenges or fine-tuning frontend performance, I adapt quickly to deliver seamless results.
             </p>
           </div>
 
           <div className={styles.textBlock}>
-            <h3 className={styles.subheading}>03 // CONTINUOUS LEARNING</h3>
+            <h3 className={styles.subheading}>CONTINUOUS LEARNING</h3>
             <p className={styles.paragraph}>
               The technology landscape evolves rapidly, and so do I. I am constantly mastering new frameworks, algorithms, and real-time computer vision tools to build the future of digital experiences.
             </p>

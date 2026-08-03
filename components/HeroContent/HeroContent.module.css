@@ -1,4 +1,4 @@
-﻿/* Ã¢â€â‚¬Ã¢â€â‚¬ Hero Content Overlay Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Hero Content Overlay Ã¢â€â‚¬Ã¢â€â‚¬ */
 
 .container {
   position: absolute;
@@ -178,32 +178,58 @@
 
 @media (max-width: 768px) {
   .container {
-    align-items: flex-end;
-    padding-bottom: 120px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 42vh;
+    padding-bottom: 3.5rem;
   }
   .content {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     max-width: 100%;
+    align-items: center;
+    text-align: center;
+    gap: 1.1rem;
+  }
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.85rem;
+  }
+  .name {
+    font-size: clamp(1.8rem, 8.5vw, 2.5rem);
+    white-space: nowrap;
+  }
+  .subheading {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
   }
   .actionsRow {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 0.75rem;
   }
   .actionsContainer {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    gap: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    gap: 0.75rem;
+  }
+  .btnPrimary,
+  .btnSecondary {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
   }
   .socialIcons {
     border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none;
     padding-left: 0;
-    padding-top: 1.5rem;
-    width: 100%;
+    padding-top: 0;
+    width: auto;
     justify-content: center;
+    gap: 1.25rem;
   }
 }
 

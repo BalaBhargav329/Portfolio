@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
@@ -17,32 +17,32 @@ export default function VideoIntro() {
   const [isMuted, setIsMuted] = useState(true);
   const [showSoundHint, setShowSoundHint] = useState(true);
 
-  // â”€â”€ Entrance Animation â”€â”€
+  // ── Entrance Animation ──
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
 
-      // Video fades in smoothly at its new medium size
+      // Video fades in fast — same time as hero content
       tl.fromTo(
         bgVideoRef.current,
-        { opacity: 0, scale: 0.95 },
-        { opacity: 1, scale: 1, duration: 2, ease: "power2.out" }
+        { opacity: 0, scale: 0.98 },
+        { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" }
       );
 
-      // Overlay and gradients
+      // Overlay and gradients — appear with video
       tl.fromTo(
         overlayRef.current,
         { opacity: 0 },
-        { opacity: 1, duration: 1.2, ease: "power2.out" },
-        "-=1.2"
+        { opacity: 1, duration: 0.5, ease: "power2.out" },
+        "-=0.6"
       );
 
-      // Controls appear
+      // Controls appear quickly
       tl.fromTo(
         controlsRef.current,
-        { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-        "-=0.4"
+        { opacity: 0, y: 8 },
+        { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
+        "-=0.2"
       );
     }, sectionRef);
 

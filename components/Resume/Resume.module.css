@@ -394,8 +394,7 @@
 /* PDF Embed */
 .previewBody {
   position: relative;
-  aspect-ratio: 8.5 / 11;
-  max-height: 580px;
+  aspect-ratio: 1 / 1.414;
   overflow: hidden;
 }
 
@@ -576,9 +575,6 @@
     gap: 1.5rem;
   }
 
-  .previewBody {
-    max-height: 400px;
-  }
 
   .highlightItem {
     text-align: left;

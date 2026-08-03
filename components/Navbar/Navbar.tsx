@@ -47,8 +47,8 @@ export default function Navbar() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         navRef.current,
-        { y: -30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, delay: 2.5, ease: "power3.out" }
+        { y: -20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, delay: 0.2, ease: "power3.out" }
       );
     }, navRef);
     return () => ctx.revert();
