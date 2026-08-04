@@ -77,7 +77,7 @@ export default function Navbar() {
           className={styles.logo}
           onClick={(e) => handleNavClick(e, "#hero")}
         >
-          BB<span className={styles.logoDot}>.</span>
+          BB
         </a>
 
         {/* Desktop Links */}
