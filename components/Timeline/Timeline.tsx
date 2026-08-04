@@ -18,7 +18,7 @@ type TimelineItem = {
 
 const TIMELINE_ITEMS: TimelineItem[] = [
   {
-    year: "2022 â€” 2026",
+    year: "2022 - 2026",
     title: "B.Tech in Computer Science & Engineering",
     subtitle: "Kalasalingam Academy of Research and Education",
     location: "Virudhunagar, Tamil Nadu",
@@ -26,7 +26,7 @@ const TIMELINE_ITEMS: TimelineItem[] = [
     type: "education",
   },
   {
-    year: "2020 â€” 2022",
+    year: "2020 - 2022",
     title: "Intermediate (MPC)",
     subtitle: "Narayana Junior College",
     location: "Andhra Pradesh",
@@ -34,7 +34,7 @@ const TIMELINE_ITEMS: TimelineItem[] = [
     type: "education",
   },
   {
-    year: "2019 â€” 2020",
+    year: "2019 - 2020",
     title: "Secondary School Certificate (SSC)",
     subtitle: "Nakshathra Em High School",
     location: "Andhra Pradesh",
